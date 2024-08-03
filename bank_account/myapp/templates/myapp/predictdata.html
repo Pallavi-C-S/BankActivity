@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Projects</title>
+        {% load static %}
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+       background-color: black;
+    }
+    img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.form-container {
+        text-align: center;
+    }
+    .form-container input[type="text"] {
+        width: 300px; /* Adjust the width as needed */
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .form-container input[type="submit"] {
+        width: 150px; /* Adjust the width as needed */
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<h1 style=" font-family: Times New Roman; color:white;">Bank Account Activity Analysis</h1>
+<br/>
+<div class="topnav">
+
+  <a class="/homepage" href="#home">Home</a>
+  <a href="/dataupload">EDA</a>
+<!--    <a href="/datapreprocessing">Data Preprocessing</a>-->
+  <a href="/createmodel">Model Training</a>
+  <a href="/predictdata">Predict Data</a>
+<!--     <a href="/viewgraph">Evaluation Matrix</a>-->
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="form-container">
+    <div style=" font-family: Times New Roman; color:white;text-align:center;">
+ <form action="{% url 'predictdata' %}" method="POST">
+         {% csrf_token %}
+     <h3 style="text-align:center;color:rgba(255,0,0,1);;">PREDICT NEW DATA </h3><br>
+<!--  <h1>Register Form</h1>-->
+            <div>
+				<input type="text" placeholder="AGE" required="" id="age" name="age" /><br>
+			</div>
+            <div>
+				<input type="text" placeholder="Job Designation" required="" id="job" name="job" /><br>
+			</div>
+			<div>
+				<input type="text" placeholder="Marital Status" required="" id="marital" name="marital" /><br>
+			</div><div>
+				<input type="text" placeholder="Education" required="" id="education" name="education" /><br>
+			</div>
+			<div>
+				<input type="text" placeholder="Default" required="" id="default" name="default" /><br>
+			</div>
+     <div>
+				<input type="text" placeholder="Balance" required="" id="balance" name="balance" /><br>
+			</div>
+            <div>
+				<input type="text" placeholder="Housing" required="" id="housing" name="housing" /><br>
+			</div>
+			<div>
+				<input type="text" placeholder="Loan" required="" id="loan" name="loan" /><br>
+			</div><div>
+				<input type="text" placeholder="Contact" required="" id="contact" name="contact" /><br>
+			</div>
+			<div>
+				<input type="text" placeholder="Day" required="" id="day" name="day" /><br>
+			</div>
+     <div>
+				<input type="text" placeholder="Month" required="" id="month" name="month" /><br>
+			</div>
+            <div>
+				<input type="text" placeholder="Duration" required="" id="duration" name="duration" /><br>
+			</div>
+			<div>
+				<input type="text" placeholder="Campaign" required="" id="campaign" name="campaign" /><br>
+			</div><div>
+				<input type="text" placeholder="P-Days" required="" id="pdays" name="pdays" /><br>
+			</div>
+			<div>
+				<input type="text" placeholder="Previous" required="" id="previous" name="previous" /><br>
+			</div>
+     <div>
+				<input type="text" placeholder="P-Outcome" required="" id="poutcome" name="poutcome" /><br>
+			</div>
+     <br/><br/><br/>
+  <input type="submit">
+     <br><br>
+
+     <h3>{{data1}}</h3>
+ </form>
+    </div>
+</div>
+</div>
+</body>
+</html>
